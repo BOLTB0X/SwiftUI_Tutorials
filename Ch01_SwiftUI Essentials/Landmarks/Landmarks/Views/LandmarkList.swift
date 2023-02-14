@@ -9,9 +9,15 @@ import SwiftUI
 
 struct LandmarkList: View {
     var body: some View {
-        // List 스크롤이나 Row 스택처럼 쓰기 가능
-        List(landmarks, id: \.id) { landmark in
-            LandmarkRow(landmark: landmark)
+        NavigationView {
+            List(landmarks) { landmark in
+                NavigationLink {
+                    LandmarkDetail()
+                } label: {
+                    LandmarkRow(landmark: landmark)
+                }
+            }
+            .navigationTitle("Landmarks")
         }
     }
 }
