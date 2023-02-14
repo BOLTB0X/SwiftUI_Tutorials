@@ -13,17 +13,23 @@ struct LandmarkRow: View {
     var body: some View {
         HStack { // 수평으로
             landmark.image
-                .resizable()
+                .resizable() // 사이즈
                 .frame(width: 50, height: 50)
             Text(landmark.name)
             
-            Spacer()
+            Spacer() // leading 끝에 가기위해
         }
     }
 }
 
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkRow(landmark: landmarks[0])
+        // 프리뷰 활용
+        Group { // 그룹으로 묶음
+            LandmarkRow(landmark: landmarks[0])
+                .previewLayout(.fixed(width: 300, height: 70))
+            LandmarkRow(landmark: landmarks[1])
+                .previewLayout(.fixed(width: 300, height: 70))
+        }
     }
 }
