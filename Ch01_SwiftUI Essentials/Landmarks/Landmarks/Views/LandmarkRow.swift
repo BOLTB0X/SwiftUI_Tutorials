@@ -18,6 +18,12 @@ struct LandmarkRow: View {
             Text(landmark.name)
             
             Spacer() // leading 끝에 가기위해
+            
+            // 즐겨찾기 같은 느낌이라 생각하면 됌
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundColor(Color.yellow) // 노란색
+            }
         }
     }
 }
