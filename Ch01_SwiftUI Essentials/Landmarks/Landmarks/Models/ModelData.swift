@@ -13,11 +13,12 @@ final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
 }
 
+// load
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-        else {
+        else { // 에러
             fatalError("Couldn't find \(filename) in main bundle.")
     }
 

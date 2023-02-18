@@ -29,14 +29,22 @@ struct LandmarkRow: View {
 }
 
 struct LandmarkRow_Previews: PreviewProvider {
+    static var landmarks = ModelData().landmarks
+    
     static var previews: some View {
         // 프리뷰 활용
         // 미리보기 할때 특정 위치 고정 가능
-        Group { // 그룹으로 묶음
+//        Group { // 그룹으로 묶음
+//            LandmarkRow(landmark: landmarks[0])
+//                .previewLayout(.fixed(width: 300, height: 70))
+//            LandmarkRow(landmark: landmarks[1])
+//                .previewLayout(.fixed(width: 300, height: 70))
+//        }
+        // combine에 따른 수정
+        Group {
             LandmarkRow(landmark: landmarks[0])
-                .previewLayout(.fixed(width: 300, height: 70))
             LandmarkRow(landmark: landmarks[1])
-                .previewLayout(.fixed(width: 300, height: 70))
         }
+        .previewLayout(.fixed(width: 300, height: 70))
     }
 }
