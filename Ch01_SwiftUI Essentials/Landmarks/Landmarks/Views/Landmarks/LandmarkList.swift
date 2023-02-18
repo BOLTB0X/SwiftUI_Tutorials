@@ -6,26 +6,28 @@
 //
 
 import SwiftUI
+import Combine
 
 struct LandmarkList: View {
+    // @EnvironmentObject 속성 선언을 추가
     @EnvironmentObject var modelData: ModelData
     @State private var showFavoritesOnly = false
 
     var filteredLandmarks: [Landmark] {
-        landmarks.filter { landmark in
+        // ModelData Object
+        modelData.landmarks.filter { landmark in
             (!showFavoritesOnly || landmark.isFavorite)
         }
     }
-    
+
     var body: some View {
         NavigationView {
             List {
-                // 토글 추가
-                Toggle(isOn:  $showFavoritesOnly) {
+                // 도글 스위치
+                Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites only")
                 }
-                
-                // for each로 리스트 내 디테일 사항 돌려줌
+                // 각 랜드마크
                 ForEach(filteredLandmarks) { landmark in
                     NavigationLink {
                         LandmarkDetail(landmark: landmark)
@@ -41,6 +43,8 @@ struct LandmarkList: View {
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkList().environmentObject(ModelData())
+        LandmarkList()
+            .environmentObject(ModelData())
+        // environmentObject(_:) 수정자를 추가
     }
 }
