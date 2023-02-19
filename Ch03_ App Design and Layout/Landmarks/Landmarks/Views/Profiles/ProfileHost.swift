@@ -18,14 +18,30 @@ struct ProfileHost: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             ProfileSummary(profile: draftProfile)
+            // EditButton이 제공하는 Done 버튼과 달리 Cancel 버튼은 종료 시 실제 프로필 데이터에 편집 내용을 적용 X
             HStack {
+                if editMode?.wrappedValue == .active {
+                    Button("Cancel", role: .cancel) {
+                        draftProfile = modelData.profile
+                        editMode?.animation().wrappedValue = .inactive
+                    }
+                }
                 Spacer()
                 EditButton()
             }
+
             if editMode?.wrappedValue == .inactive {
                 ProfileSummary(profile: modelData.profile)
             } else {
                 ProfileEditor(profile: $draftProfile) // 변경
+                // onAppear(perform:) 및 onDisappear(perform:) 수정자를 적용하여 편집기를 올바른 프로필 데이터로 채우고 사용자가 완료 버튼을 누를 때 영구 프로필을 업데이트
+                    .onAppear {
+                        draftProfile = modelData.profile
+                    }
+                // 다음에 편집 모드가 활성화될 때 이전 값이 나타납
+                    .onDisappear {
+                        modelData.profile = draftProfile
+                    }
             }
         }
         .padding()
