@@ -38,6 +38,7 @@
 		BE9D1DB629A246AF00AC3737 /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D1DB529A246AF00AC3737 /* ProfileHost.swift */; };
 		BE9D1DB829A2476900AC3737 /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D1DB729A2476900AC3737 /* ProfileSummary.swift */; };
 		BE9D1DBA29A2483E00AC3737 /* HikeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D1DB929A2483E00AC3737 /* HikeBadge.swift */; };
+		BE9D1DBC29A24E3D00AC3737 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D1DBB29A24E3D00AC3737 /* ProfileEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		BE9D1DB529A246AF00AC3737 /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
 		BE9D1DB729A2476900AC3737 /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		BE9D1DB929A2483E00AC3737 /* HikeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeBadge.swift; sourceTree = "<group>"; };
+		BE9D1DBB29A24E3D00AC3737 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 			children = (
 				BE9D1DB529A246AF00AC3737 /* ProfileHost.swift */,
 				BE9D1DB729A2476900AC3737 /* ProfileSummary.swift */,
+				BE9D1DBB29A24E3D00AC3737 /* ProfileEditor.swift */,
 			);
 			path = Profiles;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				BE9D1DAE29A2400D00AC3737 /* HikeDetail.swift in Sources */,
 				BE99D7F3299BC713007713B9 /* LandmarkDetail.swift in Sources */,
 				BE9D1DAF29A2400D00AC3737 /* HikeView.swift in Sources */,
+				BE9D1DBC29A24E3D00AC3737 /* ProfileEditor.swift in Sources */,
 				BE51DED129A106DB00374EF5 /* BadgeBackground.swift in Sources */,
 				BE9D1DAD29A2400D00AC3737 /* HikeGraph.swift in Sources */,
 				BE99D7862998D220007713B9 /* CircleImage.swift in Sources */,

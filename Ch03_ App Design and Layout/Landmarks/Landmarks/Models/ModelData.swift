@@ -14,6 +14,7 @@ final class ModelData: ObservableObject {
     // Resource에 hikeData json파일 추가
     // Object 선언
     var hikes: [Hike] = load("hikeData.json")
+    @Published var profile = Profile.default
     
     // features 추가
     var features: [Landmark] {
